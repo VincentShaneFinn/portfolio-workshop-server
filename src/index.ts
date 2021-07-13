@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 8080;
 
 app.use(cors());
 
-app.use("*",(req, res) =>{
+app.use("/",(req, res) =>{
   res.send("<h1>Welcome to your simple server! Awesome right</h1>");
 });
 
