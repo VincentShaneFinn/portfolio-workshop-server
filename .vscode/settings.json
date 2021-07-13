@@ -1,0 +1,12 @@
+{
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+    "cucumberautocomplete.strictGherkinCompletion": true,
+    "cucumberautocomplete.steps": [
+        "src/__tests__/step_definitions/*.ts",
+    ],
+    "cucumberautocomplete.syncfeatures": "src/__tests__/features/*feature"
+}
