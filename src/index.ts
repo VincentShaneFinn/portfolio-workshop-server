@@ -1,4 +1,4 @@
-import { ChatServer } from './src/chatServer';
+import { ChatServer } from './chatServer';
 import express from 'express';
 
 const cors = require('cors');
