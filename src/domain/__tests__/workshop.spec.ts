@@ -6,7 +6,7 @@ describe("addOne", () => {
 
         let actual = addOne(val);
 
-        expect(actual).toBe(3);
+        expect(actual).toBe(2);
     })
 
     it("given a string, should add the string one", () => {
