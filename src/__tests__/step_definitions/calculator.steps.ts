@@ -31,19 +31,19 @@ defineFeature(feature, test => {
         given,
         when,
         then
-      }) => {
+    }) => {
         given('I enter two numbers', () => {
             value1 = 3;
             value2 = 4;
         });
-      
+
         when('I multiply them', () => {
             result = Calculator.multiply(value1, value2);
         });
-      
+
         then('I expect the sum', () => {
             expect(result).toBe(12);
         });
-      });
+    });
 });
 

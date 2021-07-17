@@ -1,5 +1,6 @@
 import { ChatServer } from './chatServer';
 import express from 'express';
+import { StrategeryServer } from './strategeryServer';
 
 const cors = require('cors');
 const app = express();
@@ -14,3 +15,4 @@ let server = app.listen(PORT, () => {
 const io = require('socket.io')(server, { cors: { origin: '*', } });
 
 new ChatServer().start(app, io);
+new StrategeryServer().start(app, io);

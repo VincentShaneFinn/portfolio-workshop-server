@@ -6,7 +6,7 @@
     },
     "cucumberautocomplete.strictGherkinCompletion": true,
     "cucumberautocomplete.steps": [
-        "src/__tests__/step_definitions/*.ts",
+        "src/__tests__/step_definitions/**/*.ts",
     ],
     "cucumberautocomplete.syncfeatures": "src/__tests__/features/*feature"
 }
