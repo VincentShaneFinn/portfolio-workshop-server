@@ -1,6 +1,6 @@
 import { ChatServer } from './chatServer';
 import express from 'express';
-import { StrategeryServer } from './strategeryServer';
+import { StrategeryServer } from './strategeryServer/server';
 
 const cors = require('cors');
 const app = express();
