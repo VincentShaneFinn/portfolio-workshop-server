@@ -6,7 +6,8 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "dev": "nodemon  -x ts-node src/index.ts",
-    "test": "jest --watchAll"
+    "test": "jest",
+    "tdd": "jest --watchAll"
   },
   "license": "MIT",
   "dependencies": {
@@ -23,5 +24,8 @@
     "ts-jest": "^27.0.3",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "typemoq": "^2.1.0"
   }
 }
