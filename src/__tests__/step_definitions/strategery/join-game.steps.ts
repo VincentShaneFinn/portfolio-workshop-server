@@ -161,7 +161,7 @@ defineFeature(feature, test => {
         hostChangedEvent.verify(mock => mock.update(It.isAny()), Times.exactly(2));
     });
   });
-  test('Call domain event when all players disconnected fires a special', ({
+  test('Call domain event when all players disconnected', ({
     when,
     and
   }) => {

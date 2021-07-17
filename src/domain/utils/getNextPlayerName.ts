@@ -4,5 +4,4 @@ export class GetNextPlayerName {
     call(): string {
         return `Player ${this.index++}`;
     }
-
 }

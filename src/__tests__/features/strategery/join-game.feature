@@ -43,7 +43,7 @@ Feature: Join Game
         When Host Player is removed from the game
         Then host-changed event is fired again
 
-    Scenario: Call domain event when all players disconnected fires a special
+    Scenario: Call domain event when all players disconnected
         When Player 1 is added to the game
         And Player 1 is removed from the game
         When all-disconnected event is called
