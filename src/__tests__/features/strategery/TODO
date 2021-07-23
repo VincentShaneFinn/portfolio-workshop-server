@@ -1,0 +1,11 @@
+make tick tac toe instead
+- 3x3 grid
+x 2 players
+- its 1 players turn
+- non current player cannot make a play
+- current player can select a grid
+- they cannot select a grid if it is full
+- they can submit their turn
+- when turn is submitted, check for win condition
+- if won, end game
+- if not won, pass the turn
