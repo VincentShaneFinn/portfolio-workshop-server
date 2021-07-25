@@ -9,7 +9,7 @@ export class StrategeryServer {
         let serverProps = new StrategeryServerProps();
 
         io.on('connection', (socket: Socket) => {
-            let socketProps = new StrategerySocketProps(serverProps, socket);
+            let socketProps = new StrategerySocketProps(serverProps, socket, io);
             let socketObservers = new StategerySocketObservers(socketProps);
             
             socketObservers.attachAll();
@@ -23,6 +23,21 @@ export class StrategeryServer {
             socket.on("joined-lobby", () => {
                 serverProps.lobby.addPlayer(socketProps.playerName);
             })
+
+            socket.on("start-game", () => {
+                io.emit("load-game");
+            });
+
+            socket.on("loaded-game", () => {
+                serverProps.loadedPlayers++;
+                if(serverProps.loadedPlayers === 2) {
+                    serverProps.tictactoe.setPlayers(serverProps.lobby.players);
+                }
+            });
+
+            socket.on("select-tile", (data: any) => {
+                serverProps.tictactoe.selectTile(data.playerName, data.x, data.y);
+            });
 
             socket.on("disconnect", () => {
                 console.log(`${socketProps.playerName} disconnected`);

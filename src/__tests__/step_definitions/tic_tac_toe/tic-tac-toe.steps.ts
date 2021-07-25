@@ -28,7 +28,7 @@ defineFeature(feature, test => {
 
   const when_the_current_player_selects_tile_x_and_y = (when) => {
     when(/^the current player selects tile (.*),(.*)$/, (x, y) => {
-      game.selectTile(player1, x, y);
+      game.selectTile(game.currentPlayer, x, y);
     });
   }
 
@@ -125,7 +125,8 @@ defineFeature(feature, test => {
   test('switch turns', ({
     given,
     when,
-    then
+    then,
+    and
   }) => {
     given_an_in_progress_tic_tac_toe_game(given);
   
@@ -134,5 +135,13 @@ defineFeature(feature, test => {
     then('tic-tac-toe-turn domain event is called', () => {
       ticTacToeTurn.verify(mock => mock.update(It.isAny()), Times.exactly(2));
     });
+
+    and("current player is now player 2", () => {
+      expect(game.currentPlayer).toBe(player2);
+    });
+
+    when_the_current_player_selects_tile_x_and_y(when);
+
+    then_coordinate_x_and_y_is_pieceValue(then);
   });
 });

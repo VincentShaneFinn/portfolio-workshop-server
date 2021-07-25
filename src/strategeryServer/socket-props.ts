@@ -6,6 +6,7 @@ export class StrategerySocketProps {
     constructor (
         public serverProps: StrategeryServerProps, 
         public socket: Socket, 
+        public io: Socket
         ){ 
             this.playerName = serverProps.getNextPlayerName.call();
         }

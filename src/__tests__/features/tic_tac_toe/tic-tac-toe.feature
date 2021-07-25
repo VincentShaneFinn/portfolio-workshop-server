@@ -50,3 +50,6 @@ Scenario: switch turns
     Given an in progress tic-tac-toe game
     When the current player selects tile 0,0
     Then tic-tac-toe-turn domain event is called
+    And current player is now player 2
+    When the current player selects tile 0,1
+    Then coordinate 0,1 is "O"
